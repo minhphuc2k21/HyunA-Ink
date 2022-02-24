@@ -1,0 +1,28 @@
+
+.hero-header {
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-primary{
+  background-color: #E2062C;
+  border:none;
+  color: white;
+}
+
+.btn-primary:hover{
+  background-color: #9A1A1A;
+  color: white;
+}
+
+.btn-primary:active{
+  background-color: #9A1A1A;
+  color: white;
+}
+
+.btn-primary:focus{
+  background-color: #E04C4C;
+  color: white;
+}
