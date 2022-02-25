@@ -26,3 +26,20 @@
   background-color: #E04C4C;
   color: white;
 }
+
+.image-container {
+            background: #f9f9f9;
+        }
+
+        .flex-column {
+            max-width: 320px;
+        }
+
+        .d-flex img {
+            margin: 5px;
+        }
+
+        .scale {
+            transform: scaleY(1.05);
+            padding-top: 5px;
+        }
