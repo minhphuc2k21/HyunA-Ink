@@ -12,6 +12,7 @@
   color: white;
 }
 
+
 .btn-primary:hover{
   background-color: #9A1A1A;
   color: white;
@@ -23,6 +24,29 @@
 }
 
 .btn-primary:focus{
+  background-color: #E04C4C;
+  color: white;
+}
+
+
+.btn-contact{
+  background-color: black;
+  border:none;
+  color: white;
+}
+
+
+.btn-contact:hover{
+  background-color: #9A1A1A;
+  color: white;
+}
+
+.btn-contact:active{
+  background-color: #9A1A1A;
+  color: white;
+}
+
+.btn-contact:focus{
   background-color: #E04C4C;
   color: white;
 }
