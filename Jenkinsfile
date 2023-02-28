@@ -20,7 +20,7 @@ pipeline{
                 
                 script{
                     
-                     sh 'docker build -t phuctranminh/hyunah-ink:v1.1 .'
+                     sh 'docker build -t phuctranminh/hyunah-ink:v1.0 .'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline{
             steps{
                 
                 script{
-                    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                    withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
                     dockerImage.push()
                 }
             }
