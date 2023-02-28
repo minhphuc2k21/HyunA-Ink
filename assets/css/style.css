@@ -5,7 +5,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+#zoomA {
+  /* (A) OPTIONAL DIMENSIONS */
+  width: 600px;
+  height: auto;
+ 
+  /* (B) ANIMATE ZOOM */
+  /* ease | ease-in | ease-out | linear */
+  transition: transform ease-in-out 0.3s;
+}
+ 
+/* (C) ZOOM ON HOVER */
+#zoomA:hover { transform: scale(1.2); }
 .btn-primary{
   background-color: #E2062C;
   border:none;
