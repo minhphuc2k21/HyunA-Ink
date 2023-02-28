@@ -20,7 +20,7 @@ pipeline{
                 
                 script{
                     
-                    docker build -t "mywebsite:1.1" 
+                     sh 'docker build -t phuctranminh/hyunah-ink:v1.0 .'
                 }
             }
         }
