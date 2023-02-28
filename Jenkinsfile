@@ -20,22 +20,20 @@ pipeline{
                 
                 script{
                     
-                     sh 'docker build -t phuctranminh/hyunah-ink:v1.0 .'
+                     sh 'docker build -t phuctranminh/hyunah-ink:v1.1 .'
                 }
             }
         }
-        // stage('Push docker image'){
+        stage('Push docker image'){
             
-        //     steps{
+            steps{
                 
-        //         script{
-        //             docker commit "$(docker ps -lq)" "mywebsite:1.1"
-        //             docker login "https://portal.demo365.info"
-        //             docker tag "mywebsite:1.1" "portal.demo365.info/mywebsite:1.1"
-        //             docker push "portal.demo365.info/mywebsite:1.1"
-        //         }
-        //     }
-        // }
+                script{
+                    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                    dockerImage.push()
+                }
+            }
+        }
             
         }
         
