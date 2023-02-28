@@ -40,7 +40,7 @@ pipeline{
         stage('Push docker image'){
             
             steps{
-                  sh 'docker push phuctranminh/hyunah-ink'
+                  sh 'docker push phuctranminh/hyunah-ink:v1.0'
                
             }
         }
