@@ -1,12 +1,7 @@
 pipeline{
     
     agent any 
-    environment{
-        DOCKERHUB_USERNAME = "phuc"
-        APP_NAME = "Ink-App"
-        IMAGE_NAME="${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
-
-    }
+    
     stages {
         
         stage('Git Checkout'){
@@ -25,7 +20,7 @@ pipeline{
                 
                 script{
                     
-                    docker build -t mywebsite:1.1 .
+                    docker build -t "mywebsite:1.1" .
                 }
             }
         }
@@ -34,10 +29,10 @@ pipeline{
             steps{
                 
                 script{
-                    docker commit $(docker ps -lq) mywebsite:1.1
-                    docker login https://portal.demo365.info
-                    docker tag mywebsite:1.1 portal.demo365.info/mywebsite:1.1
-                    docker push portal.demo365.info/mywebsite:1.1
+                    docker commit "$(docker ps -lq)" "mywebsite:1.1"
+                    docker login "https://portal.demo365.info"
+                    docker tag "mywebsite:1.1" "portal.demo365.info/mywebsite:1.1"
+                    docker push "portal.demo365.info/mywebsite:1.1"
                 }
             }
         }
