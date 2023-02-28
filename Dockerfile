@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
+# Update Ubuntu Software repository
 RUN apt-get update
-RUN sudo apt install apache2
-RUN sudo ufw allow 'Apache'
-WORKDIR var/www/html
-ADD ./var/www/html/ /var/www/html/
+# Install nginx, php-fpm and supervisord from ubuntu repository
+RUN apt-get install -y nginx
+COPY /HyunA-Ink /var/www/html
 EXPOSE 80
