@@ -1,7 +1,9 @@
 pipeline{
     
     agent any 
-    
+     environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+  }
     stages {
         
         stage('Git Checkout'){
@@ -24,14 +26,22 @@ pipeline{
                 }
             }
         }
-        stage('Push docker image'){
+        stage('Login Docker Registry'){
             
             steps{
                 
                 script{
-                    withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
-                    dockerImage.push()
+                    
+                      sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 }
+            }
+        }
+
+        stage('Push docker image'){
+            
+            steps{
+                  sh 'docker push phuctranminh/hyunah-ink'
+               
             }
         }
             
