@@ -49,5 +49,5 @@ pipeline{
             mail bcc: '', body: 'Success', cc: '', from: '', replyTo: '', subject: 'Test mail jenkins', to: 'phuctranminh1612@gmail.com'
         }
         }
-        
+    } 
 }
